@@ -23,3 +23,5 @@
       service:
         name: httpd
         state: restarted
+
+#note: in this process wherever delcare the when condition the particular task will skip if condition is not meets
