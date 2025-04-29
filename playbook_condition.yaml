@@ -10,7 +10,7 @@
         name: httpd
         state: latest
       when:
-        a == 5    
+        a == 6  #condition not satisfied so this task is going to skip
     - name: start web server
       service:
         name: httpd
