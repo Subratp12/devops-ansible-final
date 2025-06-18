@@ -10,3 +10,6 @@
       with_items:
         - git
         - tree
+        - htop
+        - telnet
+        - nmap-ncat
