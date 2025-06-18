@@ -12,3 +12,11 @@
         name: httpd
         state: started
         enabled: yes
+    - name: Deploy index.html
+      copy:
+        dest: /var/www/html/index.html
+        content: |
+          <html>
+          <head><title>Welcome</title></head>
+          <body><h1>Apache HTTPD is running!</h1></body>
+          </html>
