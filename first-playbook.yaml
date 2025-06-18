@@ -7,7 +7,8 @@
       yum:
         name: httpd
         state: latest
-    - name: start web server
+    - name: start and enable web server
       service:
         name: httpd
         state: started
+        enabled: yes
