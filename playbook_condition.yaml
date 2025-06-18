@@ -25,3 +25,33 @@
         state: restarted
 
 #note: in this process wherever delcare the when condition the particular task will skip if condition is not meets
+
+---
+- name: first playbook
+  hosts: all
+  become: yes
+  vars:
+    - a: 5
+  tasks:
+    - name: install nginx software
+      yum:
+        name: nginx
+        state: latest
+      when:
+        a == 6  # condition not satisfied so this task is going to skip
+
+    - name: start web server
+      service:
+        name: nginx
+        state: started
+
+    - name: copying the files
+      copy:
+        src: index.html
+        dest: /usr/share/nginx/html/index.html
+
+    - name: restart server
+      service:
+        name: nginx
+        state: restarted
+
