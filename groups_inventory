@@ -22,6 +22,21 @@ example if hosts 'dev' below example reference
         name: httpd
         state: started
 
+example if hosts 'test' below example reference 
+---
+- name: first playbook
+  hosts: test
+  become: yes
+  tasks:
+    - name: install httpd software
+      yum:
+        name: httpd
+        state: latest
+    - name: start web server
+      service:
+        name: httpd
+        state: started
+
 example if host 'all' means 'dev+test'
 
 ---
